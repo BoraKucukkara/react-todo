@@ -5,3 +5,27 @@
 body{
   @apply bg-zinc-800 w-full h-screen flex justify-center items-center
 }
+
+input, button, li {
+  @apply transition-all duration-300
+}
+
+.list-item-base {
+  @apply bg-zinc-700 overflow-hidden has-[input:checked]:text-zinc-500 text-zinc-200 flex items-center justify-between border-b border-b-zinc-600
+}
+
+.list-item-enter {
+  animation: slide-in 200ms ease forwards
+}
+@keyframes slide-in {
+  from{height: 0rem;}
+  to{height: 3rem;}
+}
+
+.list-item-leave {
+  animation: slide-out 200ms ease forwards
+}
+@keyframes slide-out {
+  from{height: 3rem;}
+  to{height: 0rem;}
+}
