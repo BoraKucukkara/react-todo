@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 body{
-  @apply bg-zinc-800 w-full h-screen flex justify-center items-center
+  @apply bg-zinc-800 w-full h-auto md:h-[100svh] p-4 md:p-0 flex justify-center items-center
 }
 
-input, button, li {
+input, button, li, ul {
   @apply transition-all duration-300
 }
 
@@ -23,9 +23,23 @@ input, button, li {
 }
 
 .list-item-leave {
+  border:none;
   animation: slide-out 200ms ease forwards
 }
 @keyframes slide-out {
   from{height: 3rem;}
   to{height: 0rem;}
+}
+main >:nth-child(1) {
+  @apply rounded-xl md:rounded-r-none h-auto md:h-[28rem]
+}
+main >:nth-child(2) {
+  @apply has-[:checked]:text-green-600 rounded-xl h-auto md:h-[30rem] md:z-50 w-full md:w-[17rem] lg:w-[21rem] brightness-110 
+}
+
+main >:nth-child(3) {
+  @apply rounded-xl md:rounded-l-none h-auto md:h-[28rem]
+}
+main > div {
+ @apply shadow-zinc-900 shadow-md md:shadow-2xl w-[90vw] md:w-[15rem] lg:w-[18rem]
 }
